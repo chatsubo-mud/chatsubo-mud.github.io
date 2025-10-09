@@ -1,4 +1,5 @@
 // Matrix-style background animation for Chatsubo MUD Blog
+// Matrix-style background animation for Chatsubo MUD Blog
 // Inspired by the classic Matrix digital rain effect
 
 class MatrixRain {
