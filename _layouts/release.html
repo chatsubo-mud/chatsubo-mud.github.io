@@ -1,0 +1,356 @@
+---
+layout: default
+---
+
+<article class="release-post">
+    <header class="release-header">
+        <div class="release-meta">
+            <div class="release-version">
+                <span class="version-label">Release</span>
+                <h1 class="version-number">{{ page.version | default: "v0.0.0" }}</h1>
+            </div>
+            
+            <div class="release-info">
+                <time class="release-date">{{ page.date | date: "%B %d, %Y" }}</time>
+                {% if page.codename %}
+                <div class="release-codename">"{{ page.codename }}"</div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="release-title">
+            <h2>{{ page.title }}</h2>
+        </div>
+        
+        {% if page.critical %}
+        <div class="critical-banner">
+            <span class="critical-icon">⚠</span>
+            <span class="critical-text">Critical Update</span>
+            <span class="critical-icon">⚠</span>
+        </div>
+        {% endif %}
+    </header>
+
+    <div class="release-content">
+        {% if page.summary %}
+        <section class="release-summary">
+            <h3>Release Summary</h3>
+            <p class="summary-text">{{ page.summary }}</p>
+        </section>
+        {% endif %}
+
+        {% if page.highlights %}
+        <section class="release-highlights">
+            <h3>Key Highlights</h3>
+            <ul class="highlights-list">
+                {% for highlight in page.highlights %}
+                <li class="highlight-item">{{ highlight }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        <section class="changelog">
+            <h3>Changelog</h3>
+            <div class="changelog-content">
+                {{ content }}
+            </div>
+        </section>
+
+        {% if page.migration_notes %}
+        <section class="migration-notes">
+            <h3>Migration Notes</h3>
+            <div class="migration-content">
+                {{ page.migration_notes | markdownify }}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if page.breaking_changes %}
+        <section class="breaking-changes">
+            <h3>Breaking Changes</h3>
+            <div class="breaking-content">
+                <div class="warning-box">
+                    <strong>Warning:</strong> This release contains breaking changes.
+                </div>
+                {{ page.breaking_changes | markdownify }}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if page.contributors %}
+        <section class="contributors">
+            <h3>Contributors</h3>
+            <div class="contributors-list">
+                {% for contributor in page.contributors %}
+                <span class="contributor">{{ contributor }}</span>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+    </div>
+
+    <footer class="release-footer">
+        <div class="release-links">
+            {% if page.github_release %}
+            <a href="{{ page.github_release }}" class="release-link github-link">
+                View on GitHub
+            </a>
+            {% endif %}
+            
+            {% if page.docker_image %}
+            <a href="{{ page.docker_image }}" class="release-link docker-link">
+                Docker Image
+            </a>
+            {% endif %}
+        </div>
+
+        <div class="release-navigation">
+            {% if page.previous.url %}
+            <a href="{{ page.previous.url | relative_url }}" class="nav-link prev-release">
+                ← {{ page.previous.version | default: "Previous" }}
+            </a>
+            {% endif %}
+            
+            <a href="{{ '/archive/' | relative_url }}" class="nav-link archive-link">
+                All Releases
+            </a>
+            
+            {% if page.next.url %}
+            <a href="{{ page.next.url | relative_url }}" class="nav-link next-release">
+                {{ page.next.version | default: "Next" }} →
+            </a>
+            {% endif %}
+        </div>
+    </footer>
+</article>
+
+<style>
+.release-post {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 20, 0, 0.3);
+    border: 1px solid var(--accent-green);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.release-header {
+    background: linear-gradient(135deg, rgba(0, 255, 65, 0.1) 0%, rgba(0, 20, 0, 0.5) 100%);
+    padding: 2rem;
+    border-bottom: 1px solid var(--accent-green);
+}
+
+.release-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.version-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--accent-pink);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.version-number {
+    font-size: 3rem;
+    font-family: 'Courier New', monospace;
+    color: var(--accent-green);
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.release-info {
+    text-align: right;
+}
+
+.release-date {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.release-codename {
+    color: var(--accent-orange);
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.release-title h2 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.critical-banner {
+    background: rgba(255, 69, 0, 0.2);
+    border: 1px solid var(--accent-orange);
+    color: var(--accent-orange);
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.release-content {
+    padding: 2rem;
+}
+
+.release-content section {
+    margin-bottom: 2rem;
+}
+
+.release-content h3 {
+    color: var(--accent-green);
+    border-bottom: 1px solid var(--accent-green);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.summary-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.highlights-list {
+    list-style: none;
+    padding: 0;
+}
+
+.highlight-item {
+    background: rgba(0, 255, 65, 0.1);
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid var(--accent-green);
+    border-radius: 0 4px 4px 0;
+}
+
+.highlight-item:before {
+    content: "▶ ";
+    color: var(--accent-green);
+    font-weight: bold;
+}
+
+.changelog-content {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+.warning-box {
+    background: rgba(255, 69, 0, 0.2);
+    border: 1px solid var(--accent-orange);
+    color: var(--accent-orange);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.contributors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.contributor {
+    background: rgba(255, 20, 147, 0.2);
+    color: var(--accent-pink);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--accent-pink);
+}
+
+.release-footer {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--accent-green);
+}
+
+.release-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.release-link {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.github-link {
+    background: rgba(0, 255, 65, 0.1);
+    color: var(--accent-green);
+    border: 1px solid var(--accent-green);
+}
+
+.github-link:hover {
+    background: rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.docker-link {
+    background: rgba(255, 20, 147, 0.1);
+    color: var(--accent-pink);
+    border: 1px solid var(--accent-pink);
+}
+
+.docker-link:hover {
+    background: rgba(255, 20, 147, 0.2);
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+}
+
+.release-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-green);
+}
+
+@media (max-width: 768px) {
+    .release-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .release-info {
+        text-align: left;
+    }
+    
+    .version-number {
+        font-size: 2rem;
+    }
+    
+    .release-links {
+        flex-direction: column;
+    }
+    
+    .release-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+</style>

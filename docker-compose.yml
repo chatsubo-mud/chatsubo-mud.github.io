@@ -1,0 +1,14 @@
+services:
+  jekyll-dev:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/blog
+      - /blog/vendor  # Exclude vendor directory from sync
+      - /blog/.bundle # Exclude bundle directory from sync
+    environment:
+      - JEKYLL_ENV=development
+    stdin_open: true
+    tty: true
+    restart: unless-stopped

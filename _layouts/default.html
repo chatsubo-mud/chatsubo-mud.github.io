@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>{% if page.title %}{{ page.title | escape }} | {{ site.title }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- SEO -->
+    {% seo %}
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ "/assets/images/favicon.ico" | relative_url }}">
+    
+    <!-- RSS Feed -->
+    {% feed_meta %}
+</head>
+<body>
+    <!-- Matrix-style background -->
+    <div class="matrix-bg" id="matrix"></div>
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="site-header">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
+                </h1>
+                <p class="site-description">{{ site.description }}</p>
+                
+                <!-- Navigation -->
+                <nav class="site-nav">
+                    <a href="{{ "/" | relative_url }}">Home</a>
+                    <a href="{{ "/releases" | relative_url }}">Releases</a>
+                    <a href="{{ "/archive" | relative_url }}">Archive</a>
+                    <a href="https://chatsubo.io" target="_blank">Game Site</a>
+                    <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- Main content -->
+        <main class="page-content">
+            {{ content }}
+        </main>
+        
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; {{ 'now' | date: "%Y" }} Chatsubo MUD.</p>
+                <p class="cyberpunk-quote">"The matrix has its roots in primitive arcade games..."</p>
+                <div class="footer-links">
+                    <a href="https://chatsubo.io">Main Site</a>
+                    <a href="https://discord.gg/aD3eRKpb6h">Discord</a>
+                    <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Matrix animation script -->
+    <script src="{{ "/assets/js/matrix.js" | relative_url }}"></script>
+</body>
+</html>

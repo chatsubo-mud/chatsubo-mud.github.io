@@ -1,0 +1,324 @@
+---
+layout: default
+title: "Chatsubo MUD Development Blog"
+---
+
+<div class="home">
+    <section class="hero">
+        <h1 class="hero-title" data-typing data-typing-speed="100">Welcome to the Sprawl</h1>
+        <p class="hero-subtitle">Latest development updates from the cyberpunk streets of Chiba City</p>
+    </section>
+    
+    {% if site.posts.size > 0 %}
+    <section class="latest-posts">
+        <h2>Latest Updates</h2>
+        
+        {% for post in site.posts limit:5 %}
+        <article class="post-preview">
+            <header class="post-preview-header">
+                <h3 class="post-preview-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                </h3>
+                <div class="post-preview-meta">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </time>
+                    {% if post.version %}
+                        <span class="version-badge">v{{ post.version }}</span>
+                    {% endif %}
+                    {% if post.tags.size > 0 %}
+                        <div class="tags">
+                            {% for tag in post.tags limit:3 %}
+                                <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </header>
+            
+            <div class="post-preview-content">
+                {{ post.excerpt | strip_html | truncate: 200 }}
+            </div>
+            
+            <footer class="post-preview-footer">
+                <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+            </footer>
+        </article>
+        {% endfor %}
+        
+        <div class="view-all">
+            <a href="{{ "/archive" | relative_url }}" class="view-all-link">View All Posts →</a>
+        </div>
+    </section>
+    {% else %}
+    <section class="no-posts">
+        <div class="terminal">
+            <p>> system.log: Initializing blog database...</p>
+            <p>> status: No posts found</p>
+            <p>> message: Stay tuned for updates from the development team</p>
+        </div>
+    </section>
+    {% endif %}
+    
+    <section class="game-info">
+        <h2>About Chatsubo MUD</h2>
+        <div class="game-description">
+            <p>Chatsubo MUD is a cyberpunk text-based multiplayer game set in the atmospheric world of William Gibson's Sprawl trilogy. Step into the gritty streets of Chiba City, where high tech meets low life, and the legendary Chatsubo bar serves as your gateway to adventure.</p>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Immersive Cyberpunk World</h3>
+                    <p>Experience the dark future through rich storytelling and atmospheric descriptions inspired by classic cyberpunk literature.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Dynamic Character System</h3>
+                    <p>Choose from various roles including Console Cowboys, Street Samurai, Fixers, Techs, and Street Medics.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Syndicate Politics</h3>
+                    <p>Join player-created organizations, climb the ranks, and engage in the complex political landscape of the sprawl.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Continuous Development</h3>
+                    <p>Regular updates bring new features, improvements, and content based on community feedback.</p>
+                </div>
+            </div>
+            
+            <div class="game-links">
+                <a href="https://chatsubo.io" class="game-link primary" target="_blank">Play Now</a>
+                <a href="https://discord.gg/aD3eRKpb6h" class="game-link secondary" target="_blank">Join Discord</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+/* Home page specific styles */
+.hero {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, rgba(0, 20, 0, 0.5), rgba(0, 40, 0, 0.3));
+    border: 1px solid var(--border-green);
+    border-radius: 10px;
+}
+
+.hero-title {
+    font-family: var(--display-font);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px var(--glow-green);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    font-style: italic;
+}
+
+.latest-posts h2 {
+    font-family: var(--display-font);
+    font-size: 2rem;
+    color: var(--primary-green);
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 10px var(--glow-green);
+}
+
+.post-preview {
+    background: rgba(0, 20, 0, 0.3);
+    border: 1px solid var(--border-green);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.post-preview:hover {
+    background: rgba(0, 30, 0, 0.4);
+    box-shadow: 0 0 15px var(--glow-green);
+}
+
+.post-preview-title {
+    margin-bottom: 0.5rem;
+}
+
+.post-preview-title a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-family: var(--display-font);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.post-preview-title a:hover {
+    color: var(--secondary-pink);
+    text-shadow: 0 0 5px var(--secondary-pink);
+}
+
+.post-preview-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.version-badge {
+    background: rgba(255, 0, 128, 0.2);
+    color: var(--secondary-pink);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    border: 1px solid var(--secondary-pink);
+    font-weight: bold;
+}
+
+.post-preview-content {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-orange);
+    background: rgba(255, 102, 0, 0.1);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background: var(--accent-orange);
+    color: var(--background-dark);
+}
+
+.view-all {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.view-all-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border: 2px solid var(--primary-green);
+    background: rgba(0, 68, 0, 0.2);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.view-all-link:hover {
+    background: var(--primary-green);
+    color: var(--background-dark);
+    box-shadow: 0 0 20px var(--glow-green);
+}
+
+.game-info {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(0, 15, 0, 0.4);
+    border: 1px solid var(--border-green);
+    border-radius: 10px;
+}
+
+.game-info h2 {
+    font-family: var(--display-font);
+    font-size: 2rem;
+    color: var(--primary-green);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px var(--glow-green);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature {
+    background: rgba(0, 25, 0, 0.3);
+    padding: 1.5rem;
+    border: 1px solid var(--border-green);
+    border-radius: 5px;
+}
+
+.feature h3 {
+    color: var(--accent-orange);
+    margin-bottom: 0.5rem;
+    font-family: var(--display-font);
+}
+
+.game-links {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.game-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-family: var(--display-font);
+    text-transform: uppercase;
+}
+
+.game-link.primary {
+    background: var(--primary-green);
+    color: var(--background-dark);
+    border: 2px solid var(--primary-green);
+}
+
+.game-link.primary:hover {
+    background: transparent;
+    color: var(--primary-green);
+    box-shadow: 0 0 20px var(--glow-green);
+}
+
+.game-link.secondary {
+    background: transparent;
+    color: var(--secondary-pink);
+    border: 2px solid var(--secondary-pink);
+}
+
+.game-link.secondary:hover {
+    background: var(--secondary-pink);
+    color: var(--background-dark);
+    box-shadow: 0 0 20px var(--secondary-pink);
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .post-preview-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-link {
+        display: block;
+        margin: 1rem 0;
+    }
+}
+</style>

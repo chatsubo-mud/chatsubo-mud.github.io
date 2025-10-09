@@ -1,0 +1,73 @@
+# Chatsubo MUD Blog Configuration
+# Jekyll configuration for blog.chatsubo.io
+
+# Site settings
+title: "Chatsubo MUD Development Blog"
+description: "Development updates, features, and community news from the cyberpunk streets of Chiba City"
+url: "https://blog.chatsubo.io"
+baseurl: ""
+
+# Author and social
+author: "Chatsubo MUD Development Team"
+email: "dev@chatsubo.io"
+discord_url: "https://discord.gg/aD3eRKpb6h"
+game_url: "https://chatsubo.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Pagination (using simple prev/next instead of jekyll-paginate)
+# paginate: 10
+# paginate_path: "/page:num/"
+
+# Collections
+collections:
+  releases:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Dev Team"
+  - scope:
+      path: ""
+      type: "releases"
+    values:
+      layout: "release"
+
+# Cyberpunk theme customization
+cyberpunk:
+  primary_color: "#00ff00"
+  secondary_color: "#ff0080"
+  background_color: "#0a0a0a"
+  text_color: "#00ff00"
+  accent_color: "#ff6600"
+
+# SEO and social
+social:
+  name: "Chatsubo MUD"
+  links:
+    - "https://chatsubo.io"
+    - "https://discord.gg/aD3eRKpb6h"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .github/
+  - README.md
