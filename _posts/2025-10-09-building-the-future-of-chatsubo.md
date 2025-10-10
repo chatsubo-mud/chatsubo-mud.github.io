@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building the Future of Chatsubo MUD"
-date: 2025-10-09 12:00:00 -0000
+date: 2025-10-09 10:00:00 -0500
 author: "Development Team"
 tags: [announcement, vision, development]
 excerpt: "Our vision for creating an immersive cyberpunk MUD experience that brings William Gibson's sprawl to life through innovative gameplay systems and rich storytelling."
