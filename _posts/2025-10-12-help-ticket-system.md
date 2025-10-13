@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Your Voice in the Code: Building the Help Ticket System"
-date: 2025-10-13 08:00:00 -0500
+date: 2025-10-13 07:00:00 -0500
 categories: [development, community, player-support]
 tags: [mud, evennia, player-feedback, bug-tracking, feature-requests, community-driven]
 author: Development Team
