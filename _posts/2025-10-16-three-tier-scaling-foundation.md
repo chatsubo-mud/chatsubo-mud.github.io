@@ -283,41 +283,45 @@ Let's take stock of where we are:
 
 ## The Numbers Tell the Story
 
-Here's what progression looks like with everything integrated:
+Here's what the final progression will look like once the comprehensive Leveling System is implemented:
 
 **Level 1 Player:**
 - 100 max HP
 - 5.5 average damage
 - Needs 1,000 XP to reach level 2
-- Tier 1 enemy gives 30 XP (~30-35 kills to level)
-- Tier 2 enemy gives 100 XP (~10 kills to level)
-- Tier 3 enemy gives 300 XP (~3-4 kills to level)
+- Tier 1 enemy: 18 HP, ~3-4 hits to kill, 30 XP (~30-35 kills to level)
+- Tier 2 enemy: 35 HP, ~6-7 hits to kill, 100 XP (~10 kills to level)
+- Tier 3 enemy: 68 HP, ~12-14 hits to kill, 300 XP (~3-4 kills to level)
 
 **Level 10 Player:**
-- 190 max HP
-- 66.7 average damage
+- 3,162 max HP
+- 174 average damage
 - Needs 19,950 XP to reach level 11
-- Tier 1 enemy gives 949 XP (~20-25 kills to level)
-- Tier 2 enemy gives 3,162 XP (~6-7 kills to level)
-- Tier 3 enemy gives 9,480 XP (~2-3 kills to level)
+- Tier 1 enemy: 569 HP, ~3-4 hits to kill, 949 XP (~20-25 kills to level)
+- Tier 2 enemy: 1,106 HP, ~6-7 hits to kill, 3,162 XP (~6-7 kills to level)
+- Tier 3 enemy: 2,150 HP, ~12-14 hits to kill, 9,480 XP (~2-3 kills to level)
 
 **Level 25 Player:**
-- 340 max HP
-- 253.5 average damage
+- 12,500 max HP
+- 688 average damage
 - Needs 65,720 XP to reach level 26
-- Tier 1 enemy gives 3,750 XP (~17-18 kills to level)
-- Tier 2 enemy gives 12,475 XP (~5-6 kills to level)
-- Tier 3 enemy gives 37,500 XP (~2 kills to level)
+- Tier 1 enemy: 2,250 HP, ~3-4 hits to kill, 3,750 XP (~17-18 kills to level)
+- Tier 2 enemy: 4,375 HP, ~6-7 hits to kill, 12,475 XP (~5-6 kills to level)
+- Tier 3 enemy: 8,500 HP, ~12-14 hits to kill, 37,500 XP (~2 kills to level)
 
 **Level 50 Player:**
-- 590 max HP
-- 710.5 average damage
+- 35,360 max HP
+- 1,942 average damage
 - MAX LEVEL REACHED
-- Tier 1 enemy gives 10,590 XP
-- Tier 2 enemy gives 35,300 XP
-- Tier 3 enemy gives 105,900 XP
+- Tier 1 enemy: 6,364 HP, ~3-4 hits to kill, 10,590 XP
+- Tier 2 enemy: 12,374 HP, ~6-7 hits to kill, 35,300 XP
+- Tier 3 enemy: 24,042 HP, ~12-14 hits to kill, 105,900 XP
+
+**The Magic of Power Law Scaling:** Notice that the "hits to kill" stays constant across all levels (Tier 1: 3-4, Tier 2: 6-7, Tier 3: 12-14). A level 1 player and a level 50 player both experience the same combat pacing, just with vastly bigger numbers. This is power law scaling in action.
 
 The key insight: Because combat power (level^1.5) grows faster than XP requirements (level^1.3), the kills-per-level actually *decreases* as you progress. At level 1, you need ~10 Tier 2 kills to level up. At level 25, you need ~5-6 Tier 2 kills. This creates a satisfying sense of accelerating progression - you're getting more powerful *and* leveling faster.
+
+**Note:** The Phase 4 minimal leveling system (currently implemented) uses simplified linear HP scaling (+10 per level) and is balanced for early levels (1-10). The numbers above represent the final comprehensive Leveling System that will use BODY attribute scaling with level^1.5.
 
 ## Lessons Learned
 
