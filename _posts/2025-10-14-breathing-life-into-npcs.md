@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Breathing Life Into NPCs: The Journey to Autonomous NPC Roaming"
-date: 2025-10-14 07:00:00 -0500
+date: 2025-10-15 07:00:00 -0500
 categories: [development, ai, npcs, world-building]
 tags: [mud, evennia, npc-ai, roaming, persistence, game-design]
 author: Development Team
