@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building the Foundation: The Three-Tier Scaling System"
-date: 2025-10-23 07:00:00 -0500
+date: 2025-10-20 10:40:00 -0500
 categories: [development, progression, combat, scaling]
 tags: [mud, evennia, game-design, balance, leveling, npcs]
 author: Development Team
