@@ -16,6 +16,7 @@ game_url: "https://chatsubo.io"
 # Build settings
 markdown: kramdown
 highlighter: rouge
+future: true  # Enable publishing of posts with future dates
 plugins:
   - jekyll-feed
   - jekyll-sitemap
