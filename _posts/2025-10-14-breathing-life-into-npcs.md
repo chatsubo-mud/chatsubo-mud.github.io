@@ -98,10 +98,10 @@ But we still had a problem: NPCs weren't moving at all.
 Our AI scripts were created. They showed up in the scripts list. They were marked as active. But the `at_repeat()` method - the tick function that should run every 20 seconds - never executed.
 
 We checked everything:
-- Script interval: 20 seconds ✓
-- Script repeats: 0 (infinite) ✓
-- Script persistent: True ✓
-- Script active: True ✓
+- Script interval: 20 seconds 
+- Script repeats: 0 (infinite) 
+- Script persistent: True 
+- Script active: True 
 
 But when we checked the ticker handler status, we saw the problem:
 

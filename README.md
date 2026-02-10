@@ -23,11 +23,11 @@ This repository contains our development blog where we share:
 
 ## Connect With Us
 
-**🌐 Play the Game:** [chatsubo.io](https://chatsubo.io)
+** Play the Game:** [chatsubo.io](https://chatsubo.io)
 
-**📖 Development Blog:** [blog.chatsubo.io](https://blog.chatsubo.io)
+** Development Blog:** [blog.chatsubo.io](https://blog.chatsubo.io)
 
-**💬 Join the Community:** [Discord Server](https://discord.gg/aD3eRKpb6h)
+** Join the Community:** [Discord Server](https://discord.gg/aD3eRKpb6h)
 
 ## Get Involved
 

@@ -299,7 +299,7 @@ Chatsubo is live, growing, and ready for new players. Here's how to get started:
 
 2. **Register Your Account** - Visit https://chatsubo.io/auth/register and create your account.
 
-3. **Connect to the Game** - Use the web client at https://chatsubo.io or telnet to `chatsubo.io:4000`.
+3. **Connect to the Game** - Use the web client at https://chatsubo.io or telnet to `play.chatsubo.io:4000`.
 
 4. **Start the Tutorial** - Type `tutorial` to begin your journey. The game will guide you through character creation and core mechanics.
 
