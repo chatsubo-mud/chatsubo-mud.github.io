@@ -8,6 +8,10 @@ author: Development Team
 excerpt: "From bug reports to feature requests: How we built a comprehensive help system that empowers players to shape the game while keeping development organized and responsive."
 ---
 
+> **Note (March 2026):** Chatsubo's community has moved from Discord to Discourse.
+> Join us at [community.chatsubo.io](https://community.chatsubo.io). Discord links
+> in this post are no longer active.
+
 # Your Voice in the Code: Building the Help Ticket System
 
 In a living game world like Chatsubo MUD, players are more than just inhabitants - they're collaborators, testers, and visionaries. They discover bugs we missed, dream up features we never imagined, and need support when things go wrong. But managing that feedback shouldn't feel like shouting into the void. Enter the Help Ticket System: a comprehensive framework that turns player feedback into actionable development while keeping everyone informed.

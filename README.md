@@ -27,11 +27,11 @@ This repository contains our development blog where we share:
 
 ** Development Blog:** [blog.chatsubo.io](https://blog.chatsubo.io)
 
-** Join the Community:** [Discord Server](https://discord.gg/aD3eRKpb6h)
+** Join the Community:** [Community Forum](https://community.chatsubo.io)
 
 ## Get Involved
 
-Whether you're a veteran MUD player, cyberpunk enthusiast, or curious newcomer, there's a place for you in our community. Join our Discord to:
+Whether you're a veteran MUD player, cyberpunk enthusiast, or curious newcomer, there's a place for you in our community. Join our Community Forum to:
 
 - Participate in development discussions
 - Provide feedback on new features

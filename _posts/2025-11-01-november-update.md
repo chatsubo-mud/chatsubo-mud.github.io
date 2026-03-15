@@ -8,6 +8,10 @@ author: Development Team
 excerpt: "From empty codebase to playable cyberpunk world: How we built Chatsubo's foundation in two months, creating the combat, progression, and social systems that bring Night City to life."
 ---
 
+> **Note (March 2026):** Chatsubo's community has moved from Discord to Discourse.
+> Join us at [community.chatsubo.io](https://community.chatsubo.io). Discord links
+> in this post are no longer active.
+
 # November Game Updates - Milestone 1
 
 Two months ago, in early September, Chatsubo was a vision and an empty codebase. Today, it's a living cyberpunk world where players create characters, fight through the streets of Night City, level up through 50 levels of progression, and explore a growing dystopian metropolis. Milestone 1 - our foundation release - is complete.

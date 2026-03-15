@@ -8,6 +8,10 @@ tags: [personal, mental-health, community, open-development]
 excerpt: "An honest update on where we've been, what happened, and what Chatsubo needs to move forward."
 ---
 
+> **Note (March 2026):** Chatsubo's community has moved from Discord to Discourse.
+> Join us at [community.chatsubo.io](https://community.chatsubo.io). Discord links
+> in this post are no longer active.
+
 # Why We've Been Quiet
 
 The last post on this blog was December 1st. It's now mid-February. Two and a half months of silence from a project that was posting regular development updates. If you've been following along, you probably noticed. If you're new here, now you know.

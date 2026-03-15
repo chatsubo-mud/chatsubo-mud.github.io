@@ -7,6 +7,10 @@ tags: [announcement, vision, development]
 excerpt: "Our vision for creating an immersive cyberpunk MUD experience that brings William Gibson's sprawl to life through innovative gameplay systems and rich storytelling."
 ---
 
+> **Note (March 2026):** Chatsubo's community has moved from Discord to Discourse.
+> Join us at [community.chatsubo.io](https://community.chatsubo.io). Discord links
+> in this post are no longer active.
+
 ## Welcome to the Development Blog
 
 The neon lights of Chiba City flicker through the digital rain as we embark on an ambitious journey to create something truly special in the world of text-based gaming. Chatsubo MUD represents more than just another game - it's our attempt to capture the essence of cyberpunk literature and translate it into an interactive experience that honors both the genre's roots and its evolution.
